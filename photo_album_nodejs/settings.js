@@ -2,7 +2,7 @@ const database = {
     host: '127.0.0.1',
     user: 'root',
     password: '',
-    database: 'instagram'
+    database: 'photoalbum'
 };
 
 const port = 3000;
