@@ -23,11 +23,11 @@ El usuario solamente tiene que ingresar al sistema y seleccionar en la barra sup
 
 Después el usuario debe ingresar al sistema al dar click en el link "Sign in ", éste mostrara un formulario, en el cual se debera ingresar correo y contraseña.
 
-![](https://raw.githubusercontent.com/Gabriel2793/Photo_Album/master/images/ReactApp2.png)
+![](https://raw.githubusercontent.com/Gabriel2793/Photo_Album/master/images/react2.png)
 
 Por último, al usuario se le mostrará su imagen de perfil y un botón para agregar las imagenes que desee en su album de fotos.
 
-![](https://raw.githubusercontent.com/Gabriel2793/Photo_Album/master/images/Screenshot_2020-09-27 React App(2).png)
+![](https://raw.githubusercontent.com/Gabriel2793/Photo_Album/master/images/ReactApp3.png)
 
 Para utilizar el sistema, se debe seguir los siguientes pasos:
 
