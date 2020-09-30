@@ -58,7 +58,7 @@ Para utilizar el sistema, se debe seguir los siguientes pasos:
    la base de datos se debe llamar "photoalbum"
 
 
-También se agregó un proyecto en flutter, el cual es un album de fotos que solicita el título, descripsion de la imagen y por el momento solo permite ingresar la url de la imagen, Las siguientes ilustraciones muestran cómo se ve la aplicación.
+También se agregó un proyecto en flutter, el cual es un album de fotos que solícita el título, descripción de la imagen y por el momento solo permite ingresar la URL de la imagen, Las siguientes ilustraciones muestran cómo se ve la aplicación.
 
 ![](https://raw.githubusercontent.com/Gabriel2793/Photo_Album/master/photo_album_flutter/assets/images/app1.jpg)
 
