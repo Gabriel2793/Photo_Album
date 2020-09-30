@@ -57,4 +57,9 @@ Para utilizar el sistema, se debe seguir los siguientes pasos:
 
    la base de datos se debe llamar "photoalbum"
 
-   
+
+También se agregó un proyecto en flutter, el cual es un album de fotos que solicita el título, descripsion de la imagen y por el momento solo permite ingresar la url de la imagen, Las siguientes ilustraciones muestran cómo se ve la aplicación.
+
+
+
+Posteriormente se agregará la funcionalidad de obtener la imagen por medio de la cámara y se conectará con el servidor NodeJS.
