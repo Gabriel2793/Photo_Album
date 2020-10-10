@@ -1,5 +1,10 @@
+import 'dart:typed_data';
+
 import './Models/photo.dart';
 import './form.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 
@@ -11,22 +16,39 @@ class Photos extends StatefulWidget {
 }
 
 class PhotoState extends State<Photos> {
-  final List<Photo> photos = [
-    Photo(
-      title: 'Feliz',
-      thoughts: 'En Guadalajara con mi familia',
-      image: 'https://live.staticflickr.com/427/20499286135_a394391c84_b.jpg',
-    ),
-  ];
+  List photos = [];
+
+  getPosts() async {
+    http.Response response = await http.get(
+      'http://192.168.0.19:3000/api/getposts/44',
+    );
+    photos = json.decode(response.body);
+    setState(() {
+      photos = json.decode(response.body);
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getPosts();
+  }
 
   void addPhoto(String title, String thoughts, String image) {
-    setState(() {
-      if (title == "" || thoughts == "" || image == "") {
-        print('Enter some text into the input fields');
-      } else {
-        photos.add(Photo(title: title, thoughts: thoughts, image: image));
-      }
-    });
+    // setState(() {
+    //   if (title == "" || thoughts == "" || image == "") {
+    //     print('Enter some text into the input fields');
+    //   } else {
+    //     photos.add(
+    //       Photo(
+    //         title: title,
+    //         thoughts: thoughts,
+    //         image: image,
+    //       ),
+    //     );
+    //   }
+    // });
   }
 
   Widget build(BuildContext context) {
@@ -39,12 +61,16 @@ class PhotoState extends State<Photos> {
               child: Column(
                 children: [
                   ...photos.map(
-                    (Photo photo) {
+                    (photo) {
                       return Column(children: [
                         ListTile(
-                          leading: Image.network(photo.image),
-                          title: Text(photo.title),
-                          subtitle: Text(photo.thoughts),
+                          leading: Image.memory(
+                            Uint8List.fromList(
+                              base64.decode(photo['file']),
+                            ),
+                          ),
+                          title: Text(photo['title']),
+                          subtitle: Text(photo['idea']),
                         ),
                         ButtonBar(
                           children: [

@@ -78,7 +78,11 @@ function getPosts( req, res ) {
     knex( 'user_posts' )
     .where('user_id', data.id)
     .then( response => {
-        res.status( 200 ).json( response );
+        elements = response.map( element => {
+            element.file = element.file.toString('base64');
+            return element;
+        });
+        res.status( 200 ).json( elements );
     } );
 }
 
