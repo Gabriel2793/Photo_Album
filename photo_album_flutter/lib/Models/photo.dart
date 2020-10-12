@@ -1,11 +1,15 @@
-import 'package:flutter/material.dart';
-import 'dart:convert';
 import 'dart:typed_data';
+
+import 'package:flutter/material.dart';
 
 class Photo {
   final String title;
-  final String thoughts;
+  final String idea;
   final String image;
 
-  Photo({@required this.title, @required this.thoughts, @required this.image});
+  Photo({
+    @required this.title,
+    @required this.idea,
+    @required this.image,
+  });
 }

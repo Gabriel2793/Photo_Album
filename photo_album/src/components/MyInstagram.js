@@ -61,7 +61,7 @@ export default function MyInstagram() {
     return (
         <>
             <div className="col-12" style={ { height:'24rem', backgroundImage:`url(${ bigImage })`, backgroundSize:'cover' } }>
-               <img src={ `data:image/png;base64,${ btoa(users.file.data.reduce((data, byte) => data + String.fromCharCode(byte), '')) }` } className="rounded-circlen" style={ { height:'50%', width:'20%', left:'40%', position: 'absolute', top: '25%',  textAlign: 'center' } } alt="hola" />
+               <img src={ `data:image/png;base64,${ users.file }`} className="rounded-circlen" style={ { height:'50%', width:'20%', left:'40%', position: 'absolute', top: '25%',  textAlign: 'center' } } alt="hola" />
             </div>
             <div className="col-12 m-4">
                 <button type="button" className="btn btn-primary col-8 offset-2" data-toggle="modal" data-target="#Post">Say what you feel</button>

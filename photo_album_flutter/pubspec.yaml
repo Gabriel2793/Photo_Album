@@ -29,6 +29,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
   http: ^0.12.2
+  image_picker: ^0.6.7+11
+  dio: ^3.0.10
+  mime: ^0.9.7
 
 dev_dependencies:
   flutter_test:
@@ -52,6 +55,7 @@ flutter:
 
   assets:
     - assets/images/paisaje.jfif
+    - assets/images/snoopy.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

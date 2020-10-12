@@ -26,7 +26,15 @@ function registerUser( req, res ) {
 
 function createPost( req, res ) {
     const { knex } = req.app.locals;
-    const data = { ...req.body, file:req.file.buffer };
+    data = null;
+
+    if(req.body.app == 'undefined'){
+        data = { ...req.body, file:req.file.buffer };
+    }else{
+        data = req.body;
+        delete data.app;
+        data.file = Buffer(data.file, 'base64');
+    }
     console.log(data)
     const requiredFields = [ 'title', 'idea', 'file', 'type_file', 'user_id' ];
     const requiredKeys = Object.keys( data );
@@ -61,14 +69,14 @@ function signIn( req, res ) {
                 const secret = 's3cr3t';
                 const expiresIn = 60000;
                 const token = jwt.sign( payload, secret, { expiresIn });
-                res.status( 200 ).json( { state:'Success', token, logIn: true, id: response[0].id, file: response[0].file } );
+                res.status( 200 ).json( { state:'Success', token, logIn: true, id: response[0].id, file: response[0].file.toString('base64') } );
             }else{
                 res.status( 200 ).json( { state:'Error'} );
             }
         } );
     } )
     .catch( error => {
-        res.status(500).json( 'Bad connection to database' );
+        res.status(500).json( {state:'error', message:'Bad User or password.'} );
     } );
 }
 

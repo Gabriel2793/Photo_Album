@@ -35,9 +35,11 @@ export function UserProvider( { children } ) {
 
         axios.get( `http://localhost:3000/api/getposts/${ user_id }` )
             .then( res => {
-                const modifiedImages = res.data.map( dataImage => { 
-                    return { ...dataImage, file:btoa(dataImage.file.data.reduce((data, byte) => data + String.fromCharCode(byte), '')) }
-                } );
+                // const modifiedImages = res.data.map( dataImage => { 
+                //     console.log(dataImage.file)
+                //     return { ...dataImage, file:btoa(dataImage.file.data.reduce((data, byte) => data + String.fromCharCode(byte), '')) }
+                // } );
+                var modifiedImages = res.data;
                 localStorage.setItem( 'userPosts', JSON.stringify( modifiedImages ) );
                 changeUserData( response.data );
                 setUserPosts( modifiedImages );
