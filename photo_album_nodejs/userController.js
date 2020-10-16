@@ -4,7 +4,15 @@ const jwt = require( 'jsonwebtoken' );
 
 function registerUser( req, res ) {
     const { knex } = req.app.locals;
-    const data = { ...req.body, file:req.file.buffer };
+
+    if(req.body.app == 'undefined'){
+        data = { ...req.body, file:req.file.buffer };
+    }else{
+        data = req.body;
+        delete data.app;
+        data.file = Buffer(data.file, 'base64');
+    }
+
     const requiredFields = [ 'username', 'password', 'email', 'file' ];
     const requiredKeys = Object.keys( data );
     const requiredFieldsExist = requiredFields.every( field => requiredKeys.includes( field ) );

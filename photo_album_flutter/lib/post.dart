@@ -11,9 +11,16 @@ class MyPost extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       ListTile(
-        leading: Image.memory(
-          Uint8List.fromList(
-            base64.decode(photo.image),
+        leading: Container(
+          width: 100,
+          height: 150,
+          child: FittedBox(
+            child: Image.memory(
+              Uint8List.fromList(
+                base64.decode(photo.image),
+              ),
+            ),
+            fit: BoxFit.fill,
           ),
         ),
         title: Text(photo.title),

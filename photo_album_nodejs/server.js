@@ -24,7 +24,7 @@ app.use(cors({
 //     next();
 //   });
 
-app.use( express.json() );
+app.use( express.json({limit: '10000mb', extended: true}) );
 
 router.post( '/registeruser', upload.single('file'), routes.users.registerUser);
 router.post( '/signin', routes.users.signIn);

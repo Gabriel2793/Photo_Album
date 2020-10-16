@@ -31,6 +31,7 @@ class PhotoState extends State<Photos> {
     );
     setState(() {
       photos = json.decode(response.body);
+      print(photos);
     });
   }
 
@@ -91,6 +92,16 @@ class PhotoState extends State<Photos> {
           );
         },
       );
+
+      if (jsonResp['title'] != 'error') {
+        setState(() {
+          photos.add({
+            'title': title,
+            'idea': idea,
+            'file': base64Image,
+          });
+        });
+      }
       // FormData formData = new FormData.fromMap({
       //   'file': MultipartFile.fromString(
       //     base64.encode(filePath.readAsBytesSync()),
