@@ -14,6 +14,7 @@ Este sistema está hecho con el siguiente software:
 2. NodeJS
 3. MySQL
 4. Bootstrap 4
+5. Flutter
 
 El sistema almacena la información del usuario en la base de datos, incluidas las imágenes. 
 
@@ -64,4 +65,6 @@ También se agregó un proyecto en flutter, el cual es un album de fotos que sol
 
 ![](https://raw.githubusercontent.com/Gabriel2793/Photo_Album/master/photo_album_flutter/assets/images/app2.jpg)
 
-Posteriormente se agregará la funcionalidad de obtener la imagen por medio de la cámara y se conectará con el servidor NodeJS.
+![](https://raw.githubusercontent.com/Gabriel2793/Photo_Album/master/photo_album_flutter/assets/images/app3.jpg)
+
+![](https://raw.githubusercontent.com/Gabriel2793/Photo_Album/master/photo_album_flutter/assets/images/app4.jpg)
