@@ -63,7 +63,7 @@ También se agregó un proyecto en flutter, el cual es un album de fotos que sol
 
 ![](https://raw.githubusercontent.com/Gabriel2793/Photo_Album/master/photo_album_flutter/assets/images/app1.jpg)
 
-![](https://raw.githubusercontent.com/Gabriel2793/Photo_Album/master/photo_album_flutter/assets/images/app2.jpg)
+![](https://raw.githubusercontent.com/Gabriel2793/Photo_Album/master/photo_album_flutter/assets/images/app5.jpg)
 
 ![](https://raw.githubusercontent.com/Gabriel2793/Photo_Album/master/photo_album_flutter/assets/images/app3.jpg)
 
